@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+{% block title %}Profile{% endblock %}
+
+{% block body %}
+
+        <div id="wrapper">
+            <a href="#sidebar" class="mobilemenu"><i class="icon-reorder"></i></a>
+
+            <div id="sidebar">
+                <div id="main-nav" class="ps-container">
+                    <div id="nav-container">
+                        <div id="profile" class="clearfix">
+                            <div class="portrate hidden-xs"></div>
+                            <div class="title">
+                                <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+                                <h3>BATU University</h3>
+                            </div>
+
+                        </div>
+                        <ul id="navigation">
+                            <li class="currentmenu">
+                              <a href="#biography">
+                                <div class="icon icon-user"></div>
+                                <div class="text">About Me</div>
+                              </a>
+                            </li>
+
+                            <li>
+                              <a href="#">
+                                <div class="icon icon-book"></div>
+                                <div class="text">Assignments</div>
+                              </a>
+                            </li>
+
+                            <li>
+                              <a href="#">
+                                <div class="icon icon-edit"></div>
+                                <div class="text">Practicals</div>
+                              </a>
+                            </li>
+
+                            <li>
+                              <a href="#">
+                                <div class="icon icon-time"></div>
+                                <div class="text">Write Blogs</div>
+                              </a>
+                            </li>
+
+                            <li>
+                              <a href="{% url 'myapp:edit_profile' %}">
+                                <div class="icon icon-book"></div>
+                                <div class="text">Edit Profile</div>
+                              </a>
+                            </li>
+
+                            <li class="external">
+                              <a href="#">
+                                  <div class="icon icon-download-alt"></div>
+                                  <div class="text">Resume</div>
+                              </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px; width: 250px;"><div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px; height: 614px;"><div class="ps-scrollbar-y" style="top: 0px; height: 0px;"></div></div></div>
+
+                <div class="social-icons">
+                    <ul>
+                        <li><a href="#"><i class="icon-facebook"></i></a></li>
+                        <li><a href="#"><i class="icon-twitter"></i></a></li>
+                        <li><a href="#"><i class="icon-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="main">
+
+                <div id="biography" class="page home" data-pos="home">
+                    <div class="pageheader">
+                        <div class="headercontent">
+                            <div class="section-container">
+
+                                <div class="row">
+                                    <div class="col-sm-2 visible-sm"></div>
+                                    <div class="col-sm-7 col-md-4">
+                                        <div class="biothumb">
+                                            <img alt="image" src="{{ user.userprofile.image.url }}" class="img-responsive">
+                                            <div class="overlay">
+
+                                                <h2 class=""><b>{{ user.first_name }} {{ user.last_name }}</b></h2>
+                                                <ul class="list-unstyled">
+                                                    <li>Fourth Year</li>
+                                                </ul>
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
+                                    <div class="clearfix visible-sm visible-xs"></div>
+                                    <div class="col-sm-12 col-md-7">
+                                        <h3 class="title">About me</h3>
+
+                                        <div class="col-sm-4">
+                                        <p>First Name:</p>
+                                        </div>
+                                        <div class="col-sm-8">
+                                        <p>{{ user.first_name }}</p>
+                                        </div>
+                                        <div class="col-sm-4">
+                                        <p>Guardian's name:</p>
+                                        </div>
+                                        <div class="col-sm-8">
+                                        <p>{{ user.last_name }}</p>
+                                        </div>
+                                        <div class="col-sm-4">
+                                        <p>Website:</p>
+                                        </div>
+                                        <div class="col-sm-8">
+                                        <p>{{ user.userprofile.website }}</p>
+                                        </div>
+                                        <div class="col-sm-4">
+                                        <p>Email id:</p>
+                                        </div>
+                                        <div class="col-sm-8">
+                                        <p>{{ user.email }} </p>
+                                        </div>
+                                        <div class="col-sm-4">
+                                        <p>Contact no:</p>
+                                        </div>
+                                        <div class="col-sm-8">
+                                        <p>{{ user.userprofile.phone }}</p>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
